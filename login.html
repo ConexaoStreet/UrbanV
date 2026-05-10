@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Urban V</title>
+  <meta name="description" content="Acesse sua conta Urban V. Cadastre-se ou faça login para acompanhar pedidos e avaliações.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Urban V — Início">URBAN<span class="logo-v">V</span></a>
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html"    class="nav-link">Início</a></li>
+          <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+          <li><a href="produtos.html?filter=Mais+vendidos" class="nav-link">Mais Vendidos</a></li>
+          <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+          <li><a href="login.html"    class="nav-link active nav-auth-label">Entrar</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu" aria-modal="true">
+    <div class="mm-bg"></div>
+    <div class="mm-content">
+      <ul class="mm-list">
+        <li><a href="index.html"    class="mm-link" data-num="01">Início</a></li>
+        <li><a href="produtos.html" class="mm-link" data-num="02">Produtos</a></li>
+        <li><a href="produtos.html?filter=Mais+vendidos" class="mm-link" data-num="03">Mais Vendidos</a></li>
+        <li><a href="index.html#about" class="mm-link" data-num="04">Sobre</a></li>
+        <li><a href="conta.html"    class="mm-link" data-num="05">Minha Conta</a></li>
+      </ul>
+      <div class="mm-footer">
+        <span class="mm-social">@urbanv.oficial</span>
+        <span class="mm-slogan">Vista a rua. Carregue presença.</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="auth-page" role="main">
+    <div class="auth-card">
+
+      <div class="auth-card-header">
+        <div class="auth-logo">URBAN<span class="accent-text">V</span></div>
+        <p class="auth-tagline">Streetwear premium para quem vive presença</p>
+
+        <!-- TABS -->
+        <div class="auth-tabs" role="tablist" aria-label="Login ou cadastro">
+          <button class="auth-tab active" data-target="#loginForm" role="tab" aria-selected="true" aria-controls="loginForm">Entrar</button>
+          <button class="auth-tab"        data-target="#registerForm" role="tab" aria-selected="false" aria-controls="registerForm">Criar conta</button>
+        </div>
+      </div>
+
+      <div class="auth-form-wrap">
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form active" id="loginForm" novalidate aria-label="Formulário de login">
+          <div class="form-row">
+            <label for="lEmail">E-mail</label>
+            <input type="email" id="lEmail" name="email" placeholder="seu@email.com" required autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label for="lPass">Senha</label>
+            <input type="password" id="lPass" name="password" placeholder="Sua senha" required autocomplete="current-password">
+          </div>
+          <div style="text-align:right;margin-top:-6px">
+            <span class="auth-forgot" id="forgotLink" tabindex="0" role="button" aria-label="Recuperar senha">Esqueci minha senha</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px">Entrar na conta</button>
+          <div class="auth-divider">— ou —</div>
+          <a href="https://wa.me/5511919730067?text=Olá!+Preciso+de+ajuda+para+acessar+minha+conta+Urban+V." target="_blank" rel="noopener noreferrer" class="btn btn-wpp btn-full">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Suporte via WhatsApp
+          </a>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form class="auth-form" id="registerForm" novalidate aria-label="Formulário de cadastro">
+          <div class="form-row">
+            <label for="rName">Nome completo *</label>
+            <input type="text" id="rName" name="name" placeholder="Seu nome completo" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="rEmail">E-mail *</label>
+            <input type="email" id="rEmail" name="email" placeholder="seu@email.com" required autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label for="rWpp">WhatsApp</label>
+            <input type="tel" id="rWpp" name="whatsapp" placeholder="(11) 99999-9999" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="rPass">Senha * <span style="color:var(--gray-text);font-weight:400">(mínimo 6 caracteres)</span></label>
+            <input type="password" id="rPass" name="password" placeholder="Crie uma senha" required autocomplete="new-password" minlength="6">
+          </div>
+          <div class="form-row">
+            <label for="rPass2">Confirmar senha *</label>
+            <input type="password" id="rPass2" name="password2" placeholder="Repita a senha" required autocomplete="new-password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px">Criar minha conta</button>
+          <p style="font-size:12px;color:var(--gray-text);text-align:center;line-height:1.5;margin-top:12px">
+            Ao criar uma conta, você concorda com nossos termos de uso.<br>
+            Seus dados são salvos localmente neste dispositivo.
+          </p>
+        </form>
+
+      </div>
+
+      <p class="auth-note">
+        Conta local armazenada neste dispositivo.<br>
+        Em breve: login sincronizado em todos os aparelhos.
+      </p>
+
+    </div>
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Carrinho" aria-modal="true" aria-hidden="true">
+    <div class="cs-header">
+      <h3>Carrinho</h3>
+      <button class="cs-close" id="csClose" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cs-body" id="csBody">
+      <div class="cs-empty" id="csEmpty">
+        <div class="cs-empty-icon" aria-hidden="true">◈</div>
+        <p>Seu carrinho está vazio.</p>
+        <a href="produtos.html" class="btn btn-primary btn-sm">Explorar produtos</a>
+      </div>
+      <ul class="cs-items-cart" id="csItems" aria-label="Itens no carrinho"></ul>
+    </div>
+    <div class="cs-footer-cart" id="csFooter">
+      <div class="cs-row"><span>Subtotal</span><span id="csSubtotal">R$ 0,00</span></div>
+      <a href="pagamento.html" class="btn btn-primary btn-full" id="checkoutBtn">Finalizar Compra</a>
+      <button class="btn btn-ghost btn-full" id="clearCart">Limpar Carrinho</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

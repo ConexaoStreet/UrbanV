@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URBAN V — Vista a Rua. Carregue Presença.</title>
-  <meta name="description" content="URBAN V — Streetwear de presença. Drops limitados, atitude ilimitada. Vista a rua. Carregue presença.">
-  <meta name="keywords" content="streetwear, urban, drops limitados, oversized, moletons, camisetas, cargo, bonés">
-  <meta property="og:title" content="URBAN V — Streetwear de Presença">
-  <meta property="og:description" content="Drops limitados. Atitude ilimitada. Vista a rua.">
+  <title>URBAN V — Loja de Streetwear Premium</title>
+  <meta name="description" content="Urban V — Loja de roupas streetwear premium. Camisetas oversized, moletons, calças cargo, bonés e acessórios. Vista presença, vista Urban V.">
+  <meta name="keywords" content="streetwear, urban, roupas, camiseta oversized, moletom, cargo, bonés, loja streetwear">
+  <meta property="og:title" content="URBAN V — Streetwear Premium">
+  <meta property="og:description" content="Vista a rua. Carregue presença. Loja de roupas streetwear premium.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="loading">
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
 
-  <!-- INTRO SCREEN -->
+  <!-- INTRO -->
   <div class="intro" id="intro" aria-hidden="true">
     <canvas id="introCanvas"></canvas>
     <div class="intro-content">
@@ -29,7 +28,7 @@
         <span class="i-space">&thinsp;</span>
         <span class="i-v">V</span>
       </div>
-      <div class="intro-tag">STREETWEAR DE PRESENÇA</div>
+      <div class="intro-tag">LOJA DE STREETWEAR PREMIUM</div>
       <div class="intro-loader"><div class="intro-loader-bar"></div></div>
     </div>
   </div>
@@ -37,47 +36,39 @@
   <!-- HEADER -->
   <header class="header" id="header" role="banner">
     <div class="header-inner">
-      <a href="#home" class="logo" aria-label="Urban V — Página inicial">
-        URBAN<span class="logo-v">V</span>
-      </a>
+      <a href="index.html" class="logo" aria-label="Urban V — Início">URBAN<span class="logo-v">V</span></a>
       <nav class="nav" role="navigation" aria-label="Navegação principal">
         <ul class="nav-list">
-          <li><a href="#home"     class="nav-link" data-text="Início">Início</a></li>
-          <li><a href="#drops"    class="nav-link" data-text="Drops">Drops</a></li>
-          <li><a href="#products" class="nav-link" data-text="Produtos">Produtos</a></li>
-          <li><a href="#lookbook" class="nav-link" data-text="Lookbook">Lookbook</a></li>
-          <li><a href="#about"    class="nav-link" data-text="Sobre">Sobre</a></li>
-          <li><a href="#contact"  class="nav-link" data-text="Contato">Contato</a></li>
+          <li><a href="index.html"    class="nav-link">Início</a></li>
+          <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+          <li><a href="produtos.html?filter=Mais vendidos" class="nav-link">Mais Vendidos</a></li>
+          <li><a href="#about"        class="nav-link">Sobre</a></li>
+          <li><a href="login.html"    class="nav-link nav-auth-label">Entrar</a></li>
         </ul>
       </nav>
       <div class="header-right">
         <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
-            <path d="M16 10a4 4 0 01-8 0"/>
-          </svg>
-          <span class="cart-badge" id="cartBadge" aria-label="Itens no carrinho">0</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-live="polite">0</span>
         </button>
         <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-          <span class="ham-line"></span>
-          <span class="ham-line"></span>
-          <span class="ham-line"></span>
+          <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
         </button>
       </div>
     </div>
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu mobile" aria-modal="true">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu" aria-modal="true">
     <div class="mm-bg"></div>
     <div class="mm-content">
       <ul class="mm-list">
-        <li><a href="#home"     class="mm-link" data-num="01">Início</a></li>
-        <li><a href="#drops"    class="mm-link" data-num="02">Drops</a></li>
-        <li><a href="#products" class="mm-link" data-num="03">Produtos</a></li>
-        <li><a href="#lookbook" class="mm-link" data-num="04">Lookbook</a></li>
-        <li><a href="#about"    class="mm-link" data-num="05">Sobre</a></li>
-        <li><a href="#contact"  class="mm-link" data-num="06">Contato</a></li>
+        <li><a href="index.html"    class="mm-link" data-num="01">Início</a></li>
+        <li><a href="produtos.html" class="mm-link" data-num="02">Produtos</a></li>
+        <li><a href="produtos.html?filter=Mais vendidos" class="mm-link" data-num="03">Mais Vendidos</a></li>
+        <li><a href="#about"        class="mm-link" data-num="04">Sobre</a></li>
+        <li><a href="login.html"    class="mm-link nav-auth-label" data-num="05">Entrar</a></li>
+        <li><a href="#contact"      class="mm-link" data-num="06">Contato</a></li>
       </ul>
       <div class="mm-footer">
         <span class="mm-social">@urbanv.oficial</span>
@@ -88,18 +79,15 @@
 
   <main id="main">
 
-    <!-- ═══════════════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ HERO ═══ -->
     <section class="hero" id="home">
       <canvas id="heroCanvas" aria-hidden="true"></canvas>
       <div class="hero-grid-overlay" aria-hidden="true"></div>
       <div class="hero-noise" aria-hidden="true"></div>
-
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="eyebrow-line" aria-hidden="true"></span>
-          <span>DROPS LIMITADOS · ATITUDE ILIMITADA</span>
+          <span>STREETWEAR PREMIUM · ROUPAS URBANAS</span>
           <span class="eyebrow-line" aria-hidden="true"></span>
         </div>
         <h1 class="hero-title">
@@ -107,31 +95,23 @@
           <span class="ht-line ht-2">Carregue</span>
           <span class="ht-line ht-3 ht-accent">Presença.</span>
         </h1>
-        <p class="hero-sub">Streetwear feito para quem não passa despercebido.<br>Cada peça, uma identidade.</p>
+        <p class="hero-sub">Camisetas oversized, moletons, cargos, bonés e acessórios<br>para quem não passa despercebido.</p>
         <div class="hero-actions">
-          <a href="#products" class="btn btn-primary">Ver Coleção</a>
-          <a href="#drops"    class="btn btn-outline">Drops Ativos</a>
+          <a href="produtos.html" class="btn btn-primary">Comprar Roupas</a>
+          <a href="produtos.html?filter=Mais vendidos" class="btn btn-outline">Mais Vendidos</a>
         </div>
         <div class="hero-stats">
-          <div class="h-stat">
-            <strong>500+</strong><span>Drops realizados</span>
-          </div>
+          <div class="h-stat"><strong>12+</strong><span>Produtos</span></div>
           <div class="h-divider" aria-hidden="true"></div>
-          <div class="h-stat">
-            <strong>12K+</strong><span>Clientes ativos</span>
-          </div>
+          <div class="h-stat"><strong>5★</strong><span>Avaliações</span></div>
           <div class="h-divider" aria-hidden="true"></div>
-          <div class="h-stat">
-            <strong>03</strong><span>Coleções abertas</span>
-          </div>
+          <div class="h-stat"><strong>100%</strong><span>Streetwear</span></div>
         </div>
       </div>
-
       <div class="hero-3d" id="hero3d" aria-hidden="true">
         <div class="h3d-glow"></div>
         <canvas id="vCanvas"></canvas>
       </div>
-
       <div class="hero-scroll" aria-hidden="true">
         <span class="scroll-label">SCROLL</span>
         <span class="scroll-bar"></span>
@@ -143,30 +123,159 @@
       <div class="ticker">
         <div class="ticker-inner">
           <span>URBAN V</span><span class="tk-dot">◆</span>
-          <span>STREETWEAR DE PRESENÇA</span><span class="tk-dot">◆</span>
-          <span>DROPS LIMITADOS</span><span class="tk-dot">◆</span>
-          <span>ATITUDE ILIMITADA</span><span class="tk-dot">◆</span>
-          <span>A RUA É IDENTIDADE</span><span class="tk-dot">◆</span>
+          <span>LOJA DE STREETWEAR</span><span class="tk-dot">◆</span>
+          <span>CAMISETAS OVERSIZED</span><span class="tk-dot">◆</span>
+          <span>MOLETONS PREMIUM</span><span class="tk-dot">◆</span>
+          <span>CALÇAS CARGO</span><span class="tk-dot">◆</span>
+          <span>BONÉS E ACESSÓRIOS</span><span class="tk-dot">◆</span>
           <span>URBAN V</span><span class="tk-dot">◆</span>
-          <span>STREETWEAR DE PRESENÇA</span><span class="tk-dot">◆</span>
-          <span>DROPS LIMITADOS</span><span class="tk-dot">◆</span>
-          <span>ATITUDE ILIMITADA</span><span class="tk-dot">◆</span>
-          <span>A RUA É IDENTIDADE</span><span class="tk-dot">◆</span>
+          <span>LOJA DE STREETWEAR</span><span class="tk-dot">◆</span>
+          <span>CAMISETAS OVERSIZED</span><span class="tk-dot">◆</span>
+          <span>MOLETONS PREMIUM</span><span class="tk-dot">◆</span>
+          <span>CALÇAS CARGO</span><span class="tk-dot">◆</span>
+          <span>BONÉS E ACESSÓRIOS</span><span class="tk-dot">◆</span>
         </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════
-         DROPS
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ CATEGORIAS ═══ -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div class="s-label reveal-text">NOSSA LOJA</div>
+          <h2 class="s-title split-words">Explore por <span class="accent-text">Categoria</span></h2>
+          <p class="s-desc reveal-text">Camisetas, moletons, calças, bonés e acessórios — tudo que você precisa para montar um visual streetwear completo.</p>
+        </div>
+        <div class="cat-grid">
+          <a href="produtos.html?filter=Camisetas" class="cat-card" data-aos>
+            <div class="cat-bg cat-c1"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">UV</div>
+            <div class="cat-body">
+              <div class="cat-name">Camisetas</div>
+              <div class="cat-count" data-cat-count="Camisetas">carregando...</div>
+            </div>
+          </a>
+          <a href="produtos.html?filter=Moletons" class="cat-card" data-aos data-aos-delay="80">
+            <div class="cat-bg cat-c2"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">UV</div>
+            <div class="cat-body">
+              <div class="cat-name">Moletons</div>
+              <div class="cat-count" data-cat-count="Moletons">carregando...</div>
+            </div>
+          </a>
+          <a href="produtos.html?filter=Calças" class="cat-card" data-aos data-aos-delay="160">
+            <div class="cat-bg cat-c3"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">UV</div>
+            <div class="cat-body">
+              <div class="cat-name">Calças</div>
+              <div class="cat-count" data-cat-count="Calças">carregando...</div>
+            </div>
+          </a>
+          <a href="produtos.html?filter=Bonés" class="cat-card" data-aos data-aos-delay="240">
+            <div class="cat-bg cat-c4"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">UV</div>
+            <div class="cat-body">
+              <div class="cat-name">Bonés</div>
+              <div class="cat-count" data-cat-count="Bonés">carregando...</div>
+            </div>
+          </a>
+          <a href="produtos.html?filter=Acessórios" class="cat-card" data-aos data-aos-delay="320">
+            <div class="cat-bg cat-c5"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">UV</div>
+            <div class="cat-body">
+              <div class="cat-name">Acessórios</div>
+              <div class="cat-count" data-cat-count="Acessórios">carregando...</div>
+            </div>
+          </a>
+          <a href="produtos.html?filter=Promoções" class="cat-card" data-aos data-aos-delay="400">
+            <div class="cat-bg cat-c6"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-icon" aria-hidden="true">%</div>
+            <div class="cat-body">
+              <div class="cat-name">Promoções</div>
+              <div class="cat-count" data-cat-count="Promoções">Em oferta</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MAIS VENDIDOS ═══ -->
+    <section class="featured-section" id="featured">
+      <div class="container">
+        <div class="section-head">
+          <div class="s-label reveal-text">MAIS VENDIDOS</div>
+          <h2 class="s-title split-words">Os favoritos da <span class="accent-text">rua</span></h2>
+          <p class="s-desc reveal-text">Peças que provaram que têm estilo. As mais pedidas da Urban V.</p>
+        </div>
+        <div class="products-grid" id="featuredGrid" aria-live="polite">
+          <!-- Injetado por JS -->
+          <div class="sk-card"><div class="sk-img skeleton"></div><div class="sk-body"><div class="sk-line skeleton"></div><div class="sk-line short skeleton"></div><div class="sk-line price skeleton"></div></div></div>
+          <div class="sk-card"><div class="sk-img skeleton"></div><div class="sk-body"><div class="sk-line skeleton"></div><div class="sk-line short skeleton"></div><div class="sk-line price skeleton"></div></div></div>
+          <div class="sk-card"><div class="sk-img skeleton"></div><div class="sk-body"><div class="sk-line skeleton"></div><div class="sk-line short skeleton"></div><div class="sk-line price skeleton"></div></div></div>
+          <div class="sk-card"><div class="sk-img skeleton"></div><div class="sk-body"><div class="sk-line skeleton"></div><div class="sk-line short skeleton"></div><div class="sk-line price skeleton"></div></div></div>
+        </div>
+        <div class="featured-link">
+          <a href="produtos.html" class="btn btn-outline">Ver todos os produtos →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ POR QUE COMPRAR ═══ -->
+    <section class="why-section" id="why">
+      <div class="container">
+        <div class="section-head">
+          <div class="s-label reveal-text">COMPRA SEGURA</div>
+          <h2 class="s-title split-words">Por que comprar na <span class="accent-text">Urban V?</span></h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card" data-aos>
+            <div class="benefit-icon" aria-hidden="true">🔥</div>
+            <div class="benefit-title">Peças Selecionadas</div>
+            <p class="benefit-desc">Cada peça passa por curadoria de qualidade antes de entrar no catálogo. Você recebe o que foi prometido, sem surpresas.</p>
+          </div>
+          <div class="benefit-card" data-aos data-aos-delay="100">
+            <div class="benefit-icon" aria-hidden="true">👟</div>
+            <div class="benefit-title">Estilo Streetwear Real</div>
+            <p class="benefit-desc">Influenciado pelas maiores cenas de streetwear do mundo. Cada design tem identidade, atitude e caimento pensado para a rua.</p>
+          </div>
+          <div class="benefit-card" data-aos data-aos-delay="200">
+            <div class="benefit-icon" aria-hidden="true">🔒</div>
+            <div class="benefit-title">Compra Segura</div>
+            <p class="benefit-desc">Pague via PIX, cartão ou combine no WhatsApp. Confirmação do pedido e rastreio pelo atendimento direto.</p>
+          </div>
+          <div class="benefit-card" data-aos data-aos-delay="0">
+            <div class="benefit-icon" aria-hidden="true">💬</div>
+            <div class="benefit-title">Atendimento no WhatsApp</div>
+            <p class="benefit-desc">Tire dúvidas, acompanhe pedidos e receba suporte diretamente pelo WhatsApp. Sem chatbot, sem robô — atendimento de verdade.</p>
+          </div>
+          <div class="benefit-card" data-aos data-aos-delay="100">
+            <div class="benefit-icon" aria-hidden="true">🔄</div>
+            <div class="benefit-title">Troca Sem Burocracia</div>
+            <p class="benefit-desc">Tamanho errado? Produto com defeito? Resolvemos sem complicação. Basta entrar em contato em até 7 dias.</p>
+          </div>
+          <div class="benefit-card" data-aos data-aos-delay="200">
+            <div class="benefit-icon" aria-hidden="true">🚚</div>
+            <div class="benefit-title">Frete Grátis Acima R$299</div>
+            <p class="benefit-desc">Pedidos acima de R$299 têm frete grátis para todo o Brasil. Entregas rápidas com rastreamento em tempo real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DROPS ═══ -->
     <section class="drops" id="drops">
       <div class="container">
         <div class="section-head">
-          <div class="s-label reveal-text">DROPS ATIVOS</div>
+          <div class="s-label reveal-text">DROPS ESPECIAIS</div>
           <h2 class="s-title split-words">Coleções <span class="accent-text">Limitadas</span></h2>
-          <p class="s-desc reveal-text">Cada drop é um capítulo. Uma peça. Uma chance.</p>
+          <p class="s-desc reveal-text">Além do catálogo fixo, a Urban V lança drops exclusivos em quantidade limitada. Cada drop é uma oportunidade única.</p>
         </div>
-
         <div class="drops-grid">
           <article class="drop-card dc-large" data-aos>
             <div class="dc-bg dc-bg-1"></div>
@@ -174,13 +283,12 @@
             <div class="dc-body">
               <div class="dc-num">DROP 01</div>
               <h3 class="dc-name">Concrete<br>Season</h3>
-              <p class="dc-desc">A estética do concreto encontra o caimento perfeito. Tons frios, estrutura pesada, personalidade forte.</p>
+              <p class="dc-desc">A estética do concreto encontra o caimento perfeito. Tons frios, estrutura pesada, personalidade forte. Disponível agora no catálogo.</p>
               <div class="dc-status status-on"><span class="pulse-dot"></span>DISPONÍVEL AGORA</div>
-              <a href="#products" class="btn btn-drop">Ver Drop →</a>
+              <a href="produtos.html" class="btn btn-drop">Ver coleção →</a>
             </div>
             <div class="dc-numBg" aria-hidden="true">01</div>
           </article>
-
           <div class="drops-col">
             <article class="drop-card" data-aos>
               <div class="dc-bg dc-bg-2"></div>
@@ -188,22 +296,21 @@
               <div class="dc-body">
                 <div class="dc-num">DROP 02</div>
                 <h3 class="dc-name">Night<br>Motion</h3>
-                <p class="dc-desc">Feito para a cidade que não dorme. Peças que se movem com você na noite.</p>
+                <p class="dc-desc">Feito para a cidade que não dorme. Moletons e peças noturnas para quem se move na noite.</p>
                 <div class="dc-status status-ltd"><span class="pulse-dot"></span>ÚLTIMAS UNIDADES</div>
-                <a href="#products" class="btn btn-drop">Ver Drop →</a>
+                <a href="produtos.html?filter=Moletons" class="btn btn-drop">Ver Drop →</a>
               </div>
               <div class="dc-numBg" aria-hidden="true">02</div>
             </article>
-
             <article class="drop-card" data-aos>
               <div class="dc-bg dc-bg-3"></div>
               <div class="dc-sheen"></div>
               <div class="dc-body">
                 <div class="dc-num">DROP 03</div>
                 <h3 class="dc-name">Urban<br>Core</h3>
-                <p class="dc-desc">O essencial de quem vive a rua. Base da identidade Urban V, redefinida para a nova temporada.</p>
+                <p class="dc-desc">O essencial redefinido. Nova coleção de basics com identidade, prevista para lançamento em breve.</p>
                 <div class="dc-status status-soon"><span class="pulse-dot"></span>EM BREVE</div>
-                <button class="btn btn-drop btn-notify" data-product="Drop 03 — Urban Core">Notificar →</button>
+                <button class="btn btn-drop btn-notify" data-product="Drop 03 — Urban Core" onclick="window.open('https://wa.me/5511919730067?text='+encodeURIComponent('Olá! Quero ser avisado sobre o Drop 03 — Urban Core da Urban V!'),'_blank')">Notificar →</button>
               </div>
               <div class="dc-numBg" aria-hidden="true">03</div>
             </article>
@@ -212,106 +319,14 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         PRODUCTS
-    ═══════════════════════════════════════════════════════ -->
-    <section class="products-section" id="products">
-      <div class="container">
-        <div class="section-head">
-          <div class="s-label reveal-text">CATÁLOGO URBAN V</div>
-          <h2 class="s-title split-words">Nossos <span class="accent-text">Produtos</span></h2>
-          <p class="s-desc reveal-text">Peças pensadas para quem exige mais do que roupa.</p>
-        </div>
-
-        <div class="filters" role="group" aria-label="Filtrar por categoria">
-          <button class="filter active" data-filter="all">Todos</button>
-          <button class="filter" data-filter="Camisetas">Camisetas</button>
-          <button class="filter" data-filter="Moletons">Moletons</button>
-          <button class="filter" data-filter="Calças">Calças</button>
-          <button class="filter" data-filter="Bonés">Bonés</button>
-          <button class="filter" data-filter="Acessórios">Acessórios</button>
-        </div>
-
-        <div class="products-grid" id="productsGrid" aria-live="polite">
-          <!-- JS injected -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         LOOKBOOK
-    ═══════════════════════════════════════════════════════ -->
-    <section class="lookbook" id="lookbook">
-      <div class="container">
-        <div class="section-head">
-          <div class="s-label reveal-text">EDITORIAL</div>
-          <h2 class="s-title split-words">Urban V <span class="accent-text">Lookbook</span></h2>
-        </div>
-      </div>
-
-      <div class="lb-grid">
-        <div class="lb-item lb-tall" data-aos>
-          <div class="lb-visual lb-v1">
-            <div class="lb-stripes" aria-hidden="true"></div>
-            <div class="lb-model-shape" aria-hidden="true">
-              <div class="lm-body"></div>
-              <div class="lm-head"></div>
-            </div>
-            <div class="lb-caption">
-              <span class="lb-tag">DROP 01</span>
-              <h3>Concrete Season</h3>
-              <p>A rua não é cenário. É identidade.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="lb-item lb-stack">
-          <div class="lb-quote" data-aos>
-            <blockquote>
-              "Feito para quem não passa despercebido."
-              <cite>— Urban V Manifesto</cite>
-            </blockquote>
-          </div>
-          <div class="lb-visual lb-v2" data-aos>
-            <div class="lb-stripes lb-stripes-2" aria-hidden="true"></div>
-            <div class="lb-caption">
-              <span class="lb-tag">DROP 02</span>
-              <h3>Night Motion</h3>
-              <p>Presença em movimento.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="lb-item lb-wide" data-aos>
-          <div class="lb-visual lb-v3">
-            <div class="lb-phrase-big" aria-hidden="true">URBAN V</div>
-            <div class="lb-caption lb-cap-bottom">
-              <span class="lb-tag">NOVA COLEÇÃO</span>
-              <h3>Urban Core</h3>
-              <p>Streetwear de presença.</p>
-            </div>
-          </div>
-          <div class="lb-stats" data-aos>
-            <div class="lb-stat"><strong>03</strong><span>Drops ativos</span></div>
-            <div class="lb-stat"><strong>∞</strong><span>Atitude</span></div>
-            <div class="lb-stat"><strong>01</strong><span>Identidade</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ ABOUT ═══ -->
     <section class="about" id="about">
       <div class="container">
         <div class="about-inner">
           <div class="about-visual" data-aos>
             <div class="av-letter" aria-hidden="true">V</div>
             <div class="av-badge">EST. 2024</div>
-            <div class="av-lines" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+            <div class="av-lines" aria-hidden="true"><span></span><span></span><span></span></div>
           </div>
           <div class="about-text-wrap">
             <div class="s-label reveal-text">NOSSA HISTÓRIA</div>
@@ -319,93 +334,97 @@
             <div class="about-body">
               <p>A Urban V nasceu para transformar roupa em presença. Cada peça carrega a energia da rua, o peso da atitude e a estética de quem não foi feito para passar despercebido.</p>
               <p>Mais do que vestir, a Urban V representa movimento, identidade e postura. Somos a marca de quem vive a rua de verdade — não como cenário, mas como casa.</p>
-              <p>Drops limitados porque exclusividade é valor. Qualidade premium porque quem usa Urban V merece o melhor. Presença porque é isso que a rua exige.</p>
+              <p>Roupas urbanas com identidade, atitude e caimento. Camisetas oversized, moletons, cargos, bonés e acessórios pensados para elevar qualquer visual streetwear.</p>
             </div>
             <div class="about-pillars">
+              <div class="pillar" data-aos><span class="pillar-icon">◆</span><span>Qualidade</span></div>
+              <div class="pillar" data-aos><span class="pillar-icon">◆</span><span>Identidade</span></div>
               <div class="pillar" data-aos><span class="pillar-icon">◆</span><span>Presença</span></div>
-              <div class="pillar" data-aos><span class="pillar-icon">◆</span><span>Atitude</span></div>
-              <div class="pillar" data-aos><span class="pillar-icon">◆</span><span>Exclusividade</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         TESTIMONIALS
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ LOOKBOOK ═══ -->
+    <section class="lookbook" id="lookbook">
+      <div class="container">
+        <div class="section-head">
+          <div class="s-label reveal-text">EDITORIAL</div>
+          <h2 class="s-title split-words">Urban V <span class="accent-text">Lookbook</span></h2>
+        </div>
+      </div>
+      <div class="lb-grid">
+        <div class="lb-item lb-tall" data-aos>
+          <div class="lb-visual lb-v1">
+            <div class="lb-stripes" aria-hidden="true"></div>
+            <div class="lb-caption">
+              <span class="lb-tag">COLEÇÃO PRINCIPAL</span>
+              <h3>Concrete Season</h3>
+              <p>Roupas feitas para a rua. Identidade em cada costura.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lb-item lb-stack">
+          <div class="lb-quote" data-aos>
+            <blockquote>"Feito para quem não passa despercebido."<cite>— Urban V</cite></blockquote>
+          </div>
+          <div class="lb-visual lb-v2" data-aos>
+            <div class="lb-stripes lb-stripes-2" aria-hidden="true"></div>
+            <div class="lb-caption">
+              <span class="lb-tag">MOLETONS</span>
+              <h3>Night Motion</h3>
+              <p>Presença em movimento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lb-item lb-wide" data-aos>
+          <div class="lb-visual lb-v3">
+            <div class="lb-phrase-big" aria-hidden="true">URBAN V</div>
+            <div class="lb-caption lb-cap-bottom">
+              <span class="lb-tag">STREETWEAR PREMIUM</span>
+              <h3>Vista Presença</h3>
+              <p>Roupas com identidade, atitude e caimento.</p>
+            </div>
+          </div>
+          <div class="lb-stats" data-aos>
+            <div class="lb-stat"><strong>12+</strong><span>Produtos</span></div>
+            <div class="lb-stat"><strong>5★</strong><span>Qualidade</span></div>
+            <div class="lb-stat"><strong>100%</strong><span>Streetwear</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ AVALIAÇÕES ═══ -->
     <section class="testimonials" id="testimonials">
       <div class="container">
         <div class="section-head">
-          <div class="s-label reveal-text">QUEM USA, APROVA</div>
+          <div class="s-label reveal-text">AVALIAÇÕES REAIS</div>
           <h2 class="s-title split-words">A Rua <span class="accent-text">Falou</span></h2>
+          <p class="s-desc reveal-text">Avaliações reais de quem comprou e aprovou.</p>
         </div>
-        <div class="t-slider-wrap">
-          <div class="t-slider" id="tSlider">
-            <div class="t-card">
-              <div class="t-stars">★★★★★</div>
-              <p>"Comprei o moletom Night Motion e literalmente parei o tráfego. Qualidade absurda, caimento perfeito. Urban V é outra coisa — nível internacional."</p>
-              <div class="t-author">
-                <div class="t-avatar">GM</div>
-                <div><strong>Gabriel M.</strong><span>São Paulo, SP</span></div>
-              </div>
-            </div>
-            <div class="t-card">
-              <div class="t-stars">★★★★★</div>
-              <p>"A camiseta Concrete chegou em dois dias, exatamente como nas fotos. Melhor streetwear que já usei. Voltarei com certeza para o próximo drop."</p>
-              <div class="t-author">
-                <div class="t-avatar">LS</div>
-                <div><strong>Lucas S.</strong><span>Rio de Janeiro, RJ</span></div>
-              </div>
-            </div>
-            <div class="t-card">
-              <div class="t-stars">★★★★★</div>
-              <p>"O boné Signature é obra de arte. Todo mundo pergunta onde comprei. Urban V virou minha marca favorita sem mais. 10/10, sem hesitar."</p>
-              <div class="t-author">
-                <div class="t-avatar">MR</div>
-                <div><strong>Marina R.</strong><span>Belo Horizonte, MG</span></div>
-              </div>
-            </div>
-            <div class="t-card">
-              <div class="t-stars">★★★★★</div>
-              <p>"Cargo perfeito, bem construído e com um estilo que não existe em mais lugar nenhum. Urban V é a marca da geração. Sem dúvida."</p>
-              <div class="t-author">
-                <div class="t-avatar">FO</div>
-                <div><strong>Felipe O.</strong><span>Curitiba, PR</span></div>
-              </div>
-            </div>
-            <div class="t-card">
-              <div class="t-stars">★★★★★</div>
-              <p>"A shoulder bag vai com tudo. Funcional, estilosa e ultra premium. Urban V entende exatamente o que a rua pede. Já indiquei para todo mundo."</p>
-              <div class="t-author">
-                <div class="t-avatar">BP</div>
-                <div><strong>Beatriz P.</strong><span>Salvador, BA</span></div>
-              </div>
-            </div>
-          </div>
+        <div id="liveReviews" class="products-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+          <!-- Injetado por JS com reviews reais do localStorage -->
         </div>
-        <div class="t-controls">
-          <button class="t-btn" id="tPrev" aria-label="Depoimento anterior">←</button>
-          <div class="t-dots" id="tDots"></div>
-          <button class="t-btn" id="tNext" aria-label="Próximo depoimento">→</button>
+        <div style="text-align:center;margin-top:40px">
+          <a href="produtos.html" class="btn btn-outline">Comprar e avaliar →</a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         CTA
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ CTA ═══ -->
     <section class="cta-section">
       <div class="cta-bg-v" aria-hidden="true">V</div>
       <div class="cta-noise" aria-hidden="true"></div>
       <div class="container">
         <div class="cta-inner">
-          <div class="cta-label reveal-text">URBAN V — DROPS LIMITADOS</div>
+          <div class="cta-label reveal-text">URBAN V — STREETWEAR PREMIUM</div>
           <h2 class="cta-title split-words">Sua presença<br>começa no <span class="accent-text">visual.</span></h2>
-          <p class="cta-sub">Não espere o próximo drop acabar. Entre agora e carregue presença.</p>
+          <p class="cta-sub">Streetwear premium para quem vive presença. Vista Urban V, vista a rua.</p>
           <div class="cta-btns">
-            <a href="#drops" class="btn btn-primary btn-xl">Entrar no Drop</a>
-            <a href="https://wa.me/5511999999999?text=Olá! Quero saber mais sobre a Urban V." class="btn btn-wpp" target="_blank" rel="noopener noreferrer">
+            <a href="produtos.html" class="btn btn-primary btn-xl">Ver Todos os Produtos</a>
+            <a href="https://wa.me/5511919730067?text=Olá!+Quero+conhecer+a+Urban+V." class="btn btn-wpp btn-xl" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Falar no WhatsApp
             </a>
@@ -416,51 +435,49 @@
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer" id="contact" role="contentinfo">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">URBAN<span class="accent-text">V</span></div>
-          <p>Vista a rua. Carregue presença.</p>
+          <p>Loja de streetwear premium. Vista a rua. Carregue presença.</p>
           <div class="footer-socials">
-            <a href="https://instagram.com/urbanv.oficial" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="Instagram da Urban V">
+            <a href="https://instagram.com/urbanv.oficial" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
-            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="WhatsApp da Urban V">
+            <a href="https://wa.me/5511919730067" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="WhatsApp">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-            <a href="mailto:contato@urbanv.com.br" class="f-social" aria-label="Email da Urban V">
+            <a href="mailto:contato@urbanv.com.br" class="f-social" aria-label="E-mail">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
           </div>
         </div>
-        <nav class="footer-col" aria-label="Navegação do rodapé">
-          <h4>Navegação</h4>
+        <nav class="footer-col">
+          <h4>Loja</h4>
           <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#drops">Drops</a></li>
-            <li><a href="#products">Produtos</a></li>
-            <li><a href="#lookbook">Lookbook</a></li>
-            <li><a href="#about">Sobre</a></li>
+            <li><a href="produtos.html">Todos os Produtos</a></li>
+            <li><a href="produtos.html?filter=Mais vendidos">Mais Vendidos</a></li>
+            <li><a href="produtos.html?filter=Promoções">Promoções</a></li>
+            <li><a href="produtos.html?filter=Camisetas">Camisetas</a></li>
+            <li><a href="produtos.html?filter=Moletons">Moletons</a></li>
           </ul>
         </nav>
-        <div class="footer-col">
-          <h4>Atendimento</h4>
+        <nav class="footer-col">
+          <h4>Ajuda</h4>
           <ul>
-            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="https://wa.me/5511919730067" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
             <li><a href="mailto:contato@urbanv.com.br">E-mail</a></li>
-            <li><a href="#">Política de Trocas</a></li>
-            <li><a href="#">Rastrear Pedido</a></li>
+            <li><a href="conta.html">Minha Conta</a></li>
+            <li><a href="https://wa.me/5511919730067?text=Quero+saber+sobre+trocas" target="_blank" rel="noopener noreferrer">Trocas</a></li>
           </ul>
-        </div>
+        </nav>
         <div class="footer-col">
           <h4>Contato</h4>
           <address>
             <p>contato@urbanv.com.br</p>
-            <p>WhatsApp: (11) 99999-9999</p>
+            <p>(11) 91973-0067</p>
             <p>@urbanv.oficial</p>
             <p class="f-hours">Seg–Sex: 9h às 18h</p>
           </address>
@@ -473,11 +490,9 @@
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════════════
-       CART SIDEBAR
-  ═══════════════════════════════════════════════════════ -->
+  <!-- CART SIDEBAR -->
   <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
-  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Carrinho de compras" aria-modal="true">
+  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Carrinho" aria-modal="true" aria-hidden="true">
     <div class="cs-header">
       <h3>Carrinho</h3>
       <button class="cs-close" id="csClose" aria-label="Fechar carrinho">✕</button>
@@ -486,74 +501,21 @@
       <div class="cs-empty" id="csEmpty">
         <div class="cs-empty-icon" aria-hidden="true">◈</div>
         <p>Seu carrinho está vazio.</p>
-        <a href="#products" class="btn btn-primary btn-sm" id="csShop">Explorar produtos</a>
+        <a href="produtos.html" class="btn btn-primary btn-sm">Explorar produtos</a>
       </div>
-      <ul class="cs-items" id="csItems" aria-label="Itens no carrinho"></ul>
+      <ul class="cs-items-cart" id="csItems" aria-label="Itens no carrinho"></ul>
     </div>
-    <div class="cs-footer" id="csFooter">
+    <div class="cs-footer-cart" id="csFooter">
       <div class="cs-row"><span>Subtotal</span><span id="csSubtotal">R$ 0,00</span></div>
-      <div class="cs-row cs-row-ship"><span>Frete</span><span>A calcular</span></div>
-      <button class="btn btn-primary btn-full" id="checkoutBtn">Finalizar Pedido</button>
+      <div class="cs-row" style="font-size:12px;color:var(--gray-text)"><span>Frete grátis acima de R$299</span></div>
+      <a href="pagamento.html" class="btn btn-primary btn-full" id="checkoutBtn">Finalizar Compra</a>
       <button class="btn btn-ghost btn-full" id="clearCart">Limpar Carrinho</button>
     </div>
   </aside>
 
-  <!-- ═══════════════════════════════════════════════════════
-       CHECKOUT MODAL
-  ═══════════════════════════════════════════════════════ -->
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
-  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-label="Finalizar pedido" aria-modal="true">
-    <div class="cm-header">
-      <div>
-        <h3>Finalizar Pedido</h3>
-        <p>Pedido confirmado via WhatsApp</p>
-      </div>
-      <button class="cm-close" id="cmClose" aria-label="Fechar checkout">✕</button>
-    </div>
-    <div class="cm-body">
-      <div class="cm-summary" id="cmSummary"></div>
-      <form class="cm-form" id="cmForm" novalidate>
-        <div class="form-row">
-          <label for="fName">Nome completo *</label>
-          <input type="text" id="fName" name="name" placeholder="Seu nome completo" required autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label for="fWpp">WhatsApp *</label>
-          <input type="tel" id="fWpp" name="whatsapp" placeholder="(11) 99999-9999" required autocomplete="tel">
-        </div>
-        <div class="form-row">
-          <label for="fAddr">Endereço completo *</label>
-          <textarea id="fAddr" name="address" placeholder="Rua, número, bairro, cidade, CEP" rows="3" required autocomplete="street-address"></textarea>
-        </div>
-        <div class="form-row">
-          <label for="fPay">Forma de pagamento *</label>
-          <select id="fPay" name="payment" required>
-            <option value="">Selecionar...</option>
-            <option value="PIX (5% de desconto)">PIX — 5% de desconto</option>
-            <option value="Cartão de crédito">Cartão de crédito</option>
-            <option value="Boleto bancário">Boleto bancário</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="fNotes">Observações</label>
-          <textarea id="fNotes" name="notes" placeholder="Tamanho, cor preferida, observação especial..." rows="2"></textarea>
-        </div>
-        <div class="cm-total">
-          <span>Total do pedido</span>
-          <span id="cmTotal">R$ 0,00</span>
-        </div>
-        <button type="submit" class="btn btn-wpp btn-full btn-xl">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Confirmar via WhatsApp
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast notification -->
+  <!-- TOAST -->
   <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
 
-  <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="js/script.js"></script>

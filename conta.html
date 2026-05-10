@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta — Urban V</title>
+  <meta name="description" content="Gerencie sua conta Urban V. Histórico de pedidos, avaliações e dados pessoais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Urban V — Início">URBAN<span class="logo-v">V</span></a>
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html"    class="nav-link">Início</a></li>
+          <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+          <li><a href="produtos.html?filter=Mais+vendidos" class="nav-link">Mais Vendidos</a></li>
+          <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+          <li><a href="conta.html"    class="nav-link active nav-auth-label">Minha Conta</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu" aria-modal="true">
+    <div class="mm-bg"></div>
+    <div class="mm-content">
+      <ul class="mm-list">
+        <li><a href="index.html"    class="mm-link" data-num="01">Início</a></li>
+        <li><a href="produtos.html" class="mm-link" data-num="02">Produtos</a></li>
+        <li><a href="produtos.html?filter=Mais+vendidos" class="mm-link" data-num="03">Mais Vendidos</a></li>
+        <li><a href="index.html#about" class="mm-link" data-num="04">Sobre</a></li>
+        <li><a href="conta.html"    class="mm-link" data-num="05">Minha Conta</a></li>
+        <li><a href="index.html#contact" class="mm-link" data-num="06">Contato</a></li>
+      </ul>
+      <div class="mm-footer">
+        <span class="mm-social">@urbanv.oficial</span>
+        <span class="mm-slogan">Vista a rua. Carregue presença.</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="account-page" role="main">
+    <div class="container">
+
+      <!-- ACCOUNT HEADER -->
+      <div class="account-header">
+        <div class="account-welcome">
+          <div class="account-avatar" id="accountInitials" aria-hidden="true">UV</div>
+          <div>
+            <div class="account-name" id="accountName">Carregando...</div>
+            <div class="account-email" id="accountEmail">—</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a href="produtos.html" class="btn btn-primary btn-sm">Continuar comprando →</a>
+          <button class="btn btn-ghost btn-sm" id="logoutBtn" aria-label="Sair da conta">Sair</button>
+        </div>
+      </div>
+
+      <!-- ACCOUNT GRID -->
+      <div class="account-grid">
+
+        <!-- SIDEBAR NAV -->
+        <nav class="account-sidebar" aria-label="Navegação da conta">
+          <button class="account-nav-link active" data-target="#panelOrders">
+            <span class="account-nav-icon" aria-hidden="true">📦</span>
+            Meus Pedidos
+          </button>
+          <button class="account-nav-link" data-target="#panelData">
+            <span class="account-nav-icon" aria-hidden="true">👤</span>
+            Meus Dados
+          </button>
+          <button class="account-nav-link" data-target="#panelReviews">
+            <span class="account-nav-icon" aria-hidden="true">★</span>
+            Avaliações
+          </button>
+          <button class="account-nav-link" id="supportBtn">
+            <span class="account-nav-icon" aria-hidden="true">💬</span>
+            Suporte WhatsApp
+          </button>
+        </nav>
+
+        <!-- PANELS -->
+        <div>
+
+          <!-- ORDERS PANEL -->
+          <div class="account-panel active" id="panelOrders" role="tabpanel" aria-label="Meus pedidos">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px">
+              <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:0.04em">Meus Pedidos</h2>
+              <a href="produtos.html" class="btn btn-outline btn-sm">Nova compra →</a>
+            </div>
+            <div class="orders-list" id="ordersList" aria-live="polite">
+              <!-- JS injeta pedidos -->
+              <div style="text-align:center;padding:40px 0;color:var(--gray-text)">
+                <div style="font-size:40px;opacity:0.15;margin-bottom:16px">📦</div>
+                <p>Carregando pedidos...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- DATA PANEL -->
+          <div class="account-panel" id="panelData" role="tabpanel" aria-label="Meus dados">
+            <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:0.04em;margin-bottom:28px">Meus Dados</h2>
+            <div class="user-info-card">
+              <div class="ui-row">
+                <span class="ui-label">Nome</span>
+                <span class="ui-value" id="uiName">—</span>
+              </div>
+              <div class="ui-row">
+                <span class="ui-label">E-mail</span>
+                <span class="ui-value" id="uiEmail">—</span>
+              </div>
+              <div class="ui-row">
+                <span class="ui-label">WhatsApp</span>
+                <span class="ui-value" id="uiWpp">—</span>
+              </div>
+              <div class="ui-row">
+                <span class="ui-label">Membro desde</span>
+                <span class="ui-value" id="uiDate">—</span>
+              </div>
+              <div class="ui-row">
+                <span class="ui-label">Tipo de conta</span>
+                <span class="ui-value" style="color:var(--accent-primary)">Local (este dispositivo)</span>
+              </div>
+            </div>
+            <div style="margin-top:20px;padding:20px;background:var(--black-card);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-sm)">
+              <p style="font-size:13px;color:var(--gray-text);line-height:1.6">
+                🔐 <strong style="color:var(--white)">Conta local:</strong> seus dados estão armazenados apenas neste dispositivo.<br>
+                Em breve, a sincronização em nuvem estará disponível para acessar sua conta de qualquer lugar.<br><br>
+                Para alterar seus dados, entre em contato via WhatsApp.
+              </p>
+              <a href="https://wa.me/5511919730067?text=Olá!+Quero+alterar+meus+dados+na+Urban+V." target="_blank" rel="noopener noreferrer" class="btn btn-wpp btn-sm" style="margin-top:16px;display:inline-flex">Falar no WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- REVIEWS PANEL -->
+          <div class="account-panel" id="panelReviews" role="tabpanel" aria-label="Minhas avaliações">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px">
+              <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:0.04em">Minhas Avaliações</h2>
+            </div>
+            <div id="myReviewsList" aria-live="polite">
+              <!-- JS injeta avaliações do usuário -->
+            </div>
+            <div style="margin-top:24px;padding:20px;background:var(--black-card);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-sm)">
+              <p style="font-size:13px;color:var(--gray-text);line-height:1.6">
+                ⭐ Para avaliar um produto, acesse <strong style="color:var(--white)">Meus Pedidos</strong> e clique em <strong style="color:var(--accent-primary)">Avaliar compra</strong> no pedido correspondente.<br>
+                Só é possível avaliar produtos que você comprou.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">URBAN<span class="accent-text">V</span></div>
+          <p>Loja de streetwear premium. Vista a rua. Carregue presença.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/urbanv.oficial" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://wa.me/5511919730067" target="_blank" rel="noopener noreferrer" class="f-social" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="mailto:contato@urbanv.com.br" class="f-social" aria-label="E-mail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col">
+          <h4>Loja</h4>
+          <ul>
+            <li><a href="produtos.html">Todos os Produtos</a></li>
+            <li><a href="produtos.html?filter=Mais+vendidos">Mais Vendidos</a></li>
+            <li><a href="produtos.html?filter=Promoções">Promoções</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col">
+          <h4>Conta</h4>
+          <ul>
+            <li><a href="conta.html">Minha Conta</a></li>
+            <li><a href="conta.html">Meus Pedidos</a></li>
+            <li><a href="https://wa.me/5511919730067?text=Quero+saber+sobre+trocas" target="_blank" rel="noopener noreferrer">Trocas</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <address>
+            <p>contato@urbanv.com.br</p>
+            <p>(11) 91973-0067</p>
+            <p class="f-hours">Seg–Sex: 9h às 18h</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Urban V. Todos os direitos reservados.</p>
+        <p>Feito com atitude na rua.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Carrinho" aria-modal="true" aria-hidden="true">
+    <div class="cs-header">
+      <h3>Carrinho</h3>
+      <button class="cs-close" id="csClose" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cs-body" id="csBody">
+      <div class="cs-empty" id="csEmpty">
+        <div class="cs-empty-icon" aria-hidden="true">◈</div>
+        <p>Seu carrinho está vazio.</p>
+        <a href="produtos.html" class="btn btn-primary btn-sm">Explorar produtos</a>
+      </div>
+      <ul class="cs-items-cart" id="csItems" aria-label="Itens no carrinho"></ul>
+    </div>
+    <div class="cs-footer-cart" id="csFooter">
+      <div class="cs-row"><span>Subtotal</span><span id="csSubtotal">R$ 0,00</span></div>
+      <a href="pagamento.html" class="btn btn-primary btn-full" id="checkoutBtn">Finalizar Compra</a>
+      <button class="btn btn-ghost btn-full" id="clearCart">Limpar Carrinho</button>
+    </div>
+  </aside>
+
+  <!-- REVIEW MODAL -->
+  <div class="review-modal-overlay" id="reviewOverlay" aria-hidden="true"></div>
+  <div class="review-modal" id="reviewModal" role="dialog" aria-label="Avaliar compra" aria-modal="true">
+    <div class="rm-header">
+      <div>
+        <h3 class="rm-title">Avaliar Compra</h3>
+        <p style="font-size:13px;color:var(--gray-text);margin-top:4px" id="reviewProductName">—</p>
+      </div>
+      <button class="rm-close" id="rmClose" aria-label="Fechar modal">✕</button>
+    </div>
+    <form id="reviewForm" novalidate>
+      <div style="margin-bottom:20px">
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;color:var(--gray-text);margin-bottom:12px;text-transform:uppercase">Nota *</div>
+        <div class="star-picker" id="starPicker" role="group" aria-label="Nota de 1 a 5 estrelas">
+          <span class="star-pick" data-val="1" role="radio" aria-label="1 estrela" tabindex="0">★</span>
+          <span class="star-pick" data-val="2" role="radio" aria-label="2 estrelas" tabindex="0">★</span>
+          <span class="star-pick" data-val="3" role="radio" aria-label="3 estrelas" tabindex="0">★</span>
+          <span class="star-pick" data-val="4" role="radio" aria-label="4 estrelas" tabindex="0">★</span>
+          <span class="star-pick" data-val="5" role="radio" aria-label="5 estrelas" tabindex="0">★</span>
+        </div>
+      </div>
+      <div class="form-row" style="margin-bottom:20px">
+        <label for="reviewComment">Comentário * <span style="color:var(--gray-text);font-weight:400">(mínimo 10 caracteres)</span></label>
+        <textarea id="reviewComment" name="comment" rows="4" placeholder="Conte como foi sua experiência com o produto. Qualidade, caimento, entrega..." required minlength="10"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Enviar avaliação ★</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Render my reviews panel
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){
+        var session = null;
+        try { session = JSON.parse(localStorage.getItem('urbanv_session')); } catch(e){}
+        if(!session) return;
+        var reviews = [];
+        try { reviews = JSON.parse(localStorage.getItem('urbanv_reviews')) || []; } catch(e){}
+        var myRevs = reviews.filter(function(r){ return r.userEmail === session.email; });
+        var wrap = document.getElementById('myReviewsList');
+        if(!wrap) return;
+        if(!myRevs.length){
+          wrap.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--gray-text)"><div style="font-size:40px;opacity:0.15;margin-bottom:16px">★</div><p>Você ainda não fez avaliações.<br>Acesse <strong style="color:var(--white)">Meus Pedidos</strong> para avaliar suas compras.</p></div>';
+          return;
+        }
+        myRevs.forEach(function(r){
+          var card = document.createElement('div');
+          card.className = 'review-card';
+          var stars = '★'.repeat(r.rating) + '<span style="opacity:.2">★</span>'.repeat(5 - r.rating);
+          card.innerHTML = '<div class="rc-header"><div class="rc-author"><div class="rc-avatar" style="color:var(--accent-primary)">' + (r.name||'UV').split(' ').map(function(w){return w[0];}).slice(0,2).join('').toUpperCase() + '</div><div><div class="rc-name">' + (r.productName||'Produto Urban V') + '</div><div class="rc-date">' + new Date(r.date).toLocaleDateString('pt-BR') + '</div></div></div><div class="rc-stars">' + stars + '</div></div><p class="rc-text">"' + r.comment + '"</p>';
+          wrap.appendChild(card);
+        });
+      }, 500);
+    });
+  </script>
+</body>
+</html>
